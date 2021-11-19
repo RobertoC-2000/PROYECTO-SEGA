@@ -1,0 +1,80 @@
+﻿@model PIA_PRUEBA.Models.Film
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro de que quieres eliminar esta pelicula?</h3>
+<div>
+    <h4>Pelicula  @Html.DisplayFor(model => model.iFilm_ID)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sRelease_Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sRelease_Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tRental_Duration_Days)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tRental_Duration_Days)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sLength_In_Minutes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sLength_In_Minutes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sReplacement_Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sReplacement_Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Language.vName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language.vName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

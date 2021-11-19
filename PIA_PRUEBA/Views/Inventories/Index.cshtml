@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PIA_PRUEBA.Models.Inventory>
+
+@{
+    ViewBag.Title = "Inventario";
+}
+
+<h2>Inventario</h2>
+
+<p>
+    @Html.ActionLink("Agregar título al inventario", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iInventory_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Film.vTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Store.iStore_ID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iInventory_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Film.vTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Store.iStore_ID)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.iInventory_ID }) |
+            @Html.ActionLink("Mostrar", "Details", new { id=item.iInventory_ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.iInventory_ID })
+        </td>
+    </tr>
+}
+
+</table>

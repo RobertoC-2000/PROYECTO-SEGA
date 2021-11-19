@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PIA_PRUEBA.Models.Address>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vMunicipality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iPostal_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bTelephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City.vCity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vMunicipality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iPostal_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bTelephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City.vCity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.iAddress_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.iAddress_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.iAddress_ID })
+        </td>
+    </tr>
+}
+
+</table>

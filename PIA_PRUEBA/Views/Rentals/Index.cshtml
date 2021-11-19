@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PIA_PRUEBA.Models.Rental>
+
+@{
+    ViewBag.Title = "Registro de rentas";
+}
+
+<h2>Registro de rentas</h2>
+
+<p>
+    @Html.ActionLink("Registrar renta", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iRental_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dRental_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dReturn_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.vFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inventory.iInventory_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staff.vFirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iRental_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dRental_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dReturn_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.vFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inventory.iInventory_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staff.vFirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.iRental_ID }) |
+            @Html.ActionLink("Mostrar", "Details", new { id=item.iRental_ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.iRental_ID })
+        </td>
+    </tr>
+}
+
+</table>

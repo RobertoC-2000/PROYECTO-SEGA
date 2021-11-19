@@ -1,0 +1,42 @@
+﻿@model PIA_PRUEBA.Models.Inventory
+
+@{
+    ViewBag.Title = "Inventario";
+}
+
+<h2>@Html.DisplayFor(model => model.Film.vTitle)</h2>
+
+<div>
+    <h4>Registro @Html.DisplayFor(model => model.iInventory_ID)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Film.vTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Film.vTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Store.iStore_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Store.iStore_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.iInventory_ID }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

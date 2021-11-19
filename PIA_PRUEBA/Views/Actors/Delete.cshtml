@@ -1,0 +1,40 @@
+﻿@model PIA_PRUEBA.Models.Actor
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro que quieres eliminar este actor?</h3>
+<div>
+    <h4>Actor @Html.DisplayFor(model => model.iActor_ID)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vLastName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

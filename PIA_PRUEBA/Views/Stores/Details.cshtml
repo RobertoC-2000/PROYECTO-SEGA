@@ -1,0 +1,26 @@
+﻿@model PIA_PRUEBA.Models.Store
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Store</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.vAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.vAddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.iStore_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

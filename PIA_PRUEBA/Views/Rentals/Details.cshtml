@@ -1,0 +1,57 @@
+﻿@model PIA_PRUEBA.Models.Rental
+
+@{
+    ViewBag.Title = "Registro";
+}
+
+<h2>Registro @Html.DisplayFor(model => model.iRental_ID)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dRental_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dRental_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dReturn_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dReturn_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.vFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inventory.iInventory_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inventory.iInventory_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staff.vFirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.iRental_ID }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

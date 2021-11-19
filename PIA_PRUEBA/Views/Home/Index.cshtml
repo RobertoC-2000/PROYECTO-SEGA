@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row" style="margin:50px">
+    <div class="col-md-4 col-lg-4" style="margin:50px">
+        <img src="~/Img/Actores.jpg" width="400" height="250">
+        <h2>@Html.ActionLink("Actores", "Index", "Actors")</h2>
+        <p>Sección para ver, agregar, actualizar o eliminar actores dentro de nuestro repertorio.</p>
+    </div>
+
+    <div class="col-md-4 col-lg-4" style="margin:50px">
+        <img src="~/Img/Inventario.jpg" width="400" height="250">
+        <h2>@Html.ActionLink("Inventario", "Index", "Inventories")</h2>
+        <p>Sección en donde se muestran las peliculas existentes junto con su stock.</p>
+    </div>
+
+    <div class="col-md-4 col-lg-4" style="margin:50px">
+        <img src="~/Img/Empleados.jpg" width="400" height="250">
+        <h2>@Html.ActionLink("Personal", "Index", "Staffs")</h2>
+        <p>Sección para ver, agregar, actualizar o eliminar trabajadores actuales de la sucursal.</p>
+    </div>
+
+    <div class="col-md-4 col-lg-4" style="margin:50px">
+        <img src="~/Img/Peliculas.jpg" width="400" height="250">
+        <h2>@Html.ActionLink("Peliculas", "Index", "Films")</h2>
+        <p>Sección para ver, agregar, actualizar o eliminar películas dentro de nuestro repertorio.</p>
+    </div>
+
+    <div class="col-md-4 col-lg-4" style="margin:50px">
+        <img src="~/Img/Peliculas_rentadas.png" width="400" height="250">
+        <h2>@Html.ActionLink("Peliculas rentadas", "Index", "Rentals")</h2>
+        <p>Sección en donde se muestran las peliculas que estan rentadas actualmente, también permite realizar pagos.</p>
+    </div>
+
+    <div class="col-md-4 col-lg-4" style="margin:50px">
+        <img src="~/Img/Clientes.png" width="400" height="250">
+        <h2>@Html.ActionLink("Clientes", "Index", "Customers")</h2>
+        <p>Sección para ver, agregar, actualizar o eliminar clientes de nuestra sucursal.</p>
+    </div>
+</div>

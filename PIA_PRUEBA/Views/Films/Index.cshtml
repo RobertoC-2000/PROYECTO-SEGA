@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PIA_PRUEBA.Models.Film>
+
+@{
+    ViewBag.Title = "Peliculas";
+}
+
+<h2>Peliculas</h2>
+
+<p>
+    @Html.ActionLink("Agregar pelicula", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iFilm_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sRelease_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tRental_Duration_Days)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sLength_In_Minutes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sReplacement_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language.vName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iFilm_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sRelease_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tRental_Duration_Days)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sLength_In_Minutes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sReplacement_Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language.vName)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.iFilm_ID }) |
+            @Html.ActionLink("Mostrar", "Details", new { id=item.iFilm_ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.iFilm_ID })
+        </td>
+    </tr>
+}
+
+</table>

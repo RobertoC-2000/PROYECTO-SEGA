@@ -1,0 +1,74 @@
+﻿@model PIA_PRUEBA.Models.Customer
+
+@{
+    ViewBag.Title = "Cliente";
+}
+
+<h2>@Html.DisplayFor(model => model.vFirstName) @Html.DisplayFor(model => model.vLastName)</h2>
+
+<div>
+    <h4>Cliente @Html.DisplayFor(model => model.iCustomer_ID)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vEMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vEMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iCreation_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iCreation_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active.vActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active.vActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.vAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.vAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Store.iStore_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Store.iStore_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.iCustomer_ID }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

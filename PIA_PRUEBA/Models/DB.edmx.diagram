@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fd8c547ce1db44a69427709399104c8f" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Active" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Actor" Width="1.5" PointX="336.125" PointY="334.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Address" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Category" Width="1.5" PointX="5.125" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.City" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Country" Width="1.5" PointX="3.625" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Customer" Width="1.5" PointX="3.375" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Film" Width="1.5" PointX="11.375" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Inventory" Width="1.5" PointX="8.625" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Language" Width="1.5" PointX="5.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Payment" Width="1.5" PointX="8.625" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Rental" Width="1.5" PointX="12.625" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Staff" Width="1.5" PointX="6.125" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PIA_O_F_R2Model.Store" Width="1.5" PointX="8.875" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Customer__tActiv__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Staff__tActive_I__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Address__iCity_I__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Customer__iAddre__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Staff__iAddress___3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Store__iAddress___33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__City__iCountry_I__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Customer__iStore__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Payment__iCustom__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Rental__iCustome__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Film__iLanguage___403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Inventory__iFilm__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Inventory__iStor__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Rental__iInvento__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Payment__iStaff___534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Rental__iStaff_I__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="PIA_O_F_R2Model.FK__Staff__iStore_ID__3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

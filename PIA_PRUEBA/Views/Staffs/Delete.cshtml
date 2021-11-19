@@ -1,0 +1,88 @@
+﻿@model PIA_PRUEBA.Models.Staff
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro que quieres eliminar este empleado?</h3>
+<div>
+    <h4>Empleado @Html.DisplayFor(model => model.iStaff_ID)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vEMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vEMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active.vActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active.vActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.vAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.vAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Store.iStore_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Store.iStore_ID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

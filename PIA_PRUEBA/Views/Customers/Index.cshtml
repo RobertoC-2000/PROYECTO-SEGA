@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PIA_PRUEBA.Models.Customer>
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<h2>Clientes</h2>
+
+<p>
+    @Html.ActionLink("Registrar cliente", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iCustomer_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vEMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iCreation_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active.vActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address.vAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Store.iStore_ID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iCustomer_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vEMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iCreation_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active.vActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address.vAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Store.iStore_ID)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.iCustomer_ID }) |
+            @Html.ActionLink("Mostrar", "Details", new { id=item.iCustomer_ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.iCustomer_ID })
+        </td>
+    </tr>
+}
+
+</table>

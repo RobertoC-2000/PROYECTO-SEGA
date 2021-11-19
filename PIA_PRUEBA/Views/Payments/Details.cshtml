@@ -1,0 +1,50 @@
+﻿@model PIA_PRUEBA.Models.Payment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.iAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dPayment_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dPayment_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.vFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staff.vFirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.iPayment_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

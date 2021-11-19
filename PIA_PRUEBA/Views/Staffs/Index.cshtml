@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PIA_PRUEBA.Models.Staff>
+
+@{
+    ViewBag.Title = "Personal";
+}
+
+<h2>Personal</h2>
+
+<p>
+    @Html.ActionLink("Agregar empleado", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iStaff_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vEMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active.vActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address.vAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Store.iStore_ID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iStaff_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vEMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active.vActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address.vAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Store.iStore_ID)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.iStaff_ID }) |
+            @Html.ActionLink("Mostrar", "Details", new { id=item.iStaff_ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.iStaff_ID })
+        </td>
+    </tr>
+}
+
+</table>

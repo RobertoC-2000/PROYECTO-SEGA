@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PIA_PRUEBA.Models.Actor>
+
+@{
+    ViewBag.Title = "Actores";
+}
+
+<h2>Actores</h2>
+
+<p>
+    @Html.ActionLink("Agregar actor", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iActor_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vLastName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iActor_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vLastName)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.iActor_ID }) |
+            @Html.ActionLink("Mostrar", "Details", new { id=item.iActor_ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.iActor_ID })
+        </td>
+    </tr>
+}
+
+</table>

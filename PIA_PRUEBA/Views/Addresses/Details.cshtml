@@ -1,0 +1,58 @@
+﻿@model PIA_PRUEBA.Models.Address
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vMunicipality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vMunicipality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iPostal_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iPostal_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bTelephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bTelephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City.vCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City.vCity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.iAddress_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

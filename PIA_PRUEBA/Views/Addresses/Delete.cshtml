@@ -1,0 +1,64 @@
+﻿@model PIA_PRUEBA.Models.Address
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vMunicipality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vMunicipality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iPostal_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iPostal_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bTelephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bTelephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City.vCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City.vCity)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

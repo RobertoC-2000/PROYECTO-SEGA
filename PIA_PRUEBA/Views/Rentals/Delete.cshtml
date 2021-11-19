@@ -1,0 +1,64 @@
+﻿@model PIA_PRUEBA.Models.Rental
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro que quieres eliminar este registro?</h3>
+<div>
+    <h4>Registro @Html.DisplayFor(model => model.iRental_ID)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dRental_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dRental_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dReturn_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dReturn_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.vFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inventory.iInventory_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inventory.iInventory_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff.vFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staff.vFirstName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

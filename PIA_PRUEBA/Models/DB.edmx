@@ -1,0 +1,1062 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PIA_O_F_R2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Active">
+          <Key>
+            <PropertyRef Name="tActive_ID" />
+          </Key>
+          <Property Name="tActive_ID" Type="tinyint" Nullable="false" />
+          <Property Name="vActive" Type="varchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Actor">
+          <Key>
+            <PropertyRef Name="iActor_ID" />
+          </Key>
+          <Property Name="iActor_ID" Type="int" Nullable="false" />
+          <Property Name="vFirstName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="vLastName" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="iAddress_ID" />
+          </Key>
+          <Property Name="iAddress_ID" Type="int" Nullable="false" />
+          <Property Name="vAddress" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="vMunicipality" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="iCity_ID" Type="int" />
+          <Property Name="iPostal_Code" Type="int" Nullable="false" />
+          <Property Name="bTelephone" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="iCategory_ID" />
+          </Key>
+          <Property Name="iCategory_ID" Type="int" Nullable="false" />
+          <Property Name="vName" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="iCity_ID" />
+          </Key>
+          <Property Name="iCity_ID" Type="int" Nullable="false" />
+          <Property Name="vCity" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="iCountry_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="iCountry_ID" />
+          </Key>
+          <Property Name="iCountry_ID" Type="int" Nullable="false" />
+          <Property Name="vCountry" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="iCustomer_ID" />
+          </Key>
+          <Property Name="iCustomer_ID" Type="int" Nullable="false" />
+          <Property Name="iStore_ID" Type="int" />
+          <Property Name="vFirstName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="vLastName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="vEMail" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="iAddress_ID" Type="int" />
+          <Property Name="iCreation_Date" Type="date" Nullable="false" />
+          <Property Name="tActive_ID" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="iFilm_ID" />
+          </Key>
+          <Property Name="iFilm_ID" Type="int" Nullable="false" />
+          <Property Name="vTitle" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="sRelease_Year" Type="smallint" Nullable="false" />
+          <Property Name="iLanguage_ID" Type="int" />
+          <Property Name="tRental_Duration_Days" Type="tinyint" />
+          <Property Name="sLength_In_Minutes" Type="smallint" Nullable="false" />
+          <Property Name="sReplacement_Cost" Type="smallint" Nullable="false" />
+          <Property Name="tRating" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="iInventory_ID" />
+          </Key>
+          <Property Name="iInventory_ID" Type="int" Nullable="false" />
+          <Property Name="iFilm_ID" Type="int" />
+          <Property Name="iStore_ID" Type="int" />
+          <Property Name="sQuantity" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="iLanguage_ID" />
+          </Key>
+          <Property Name="iLanguage_ID" Type="int" Nullable="false" />
+          <Property Name="vName" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="iPayment_ID" />
+          </Key>
+          <Property Name="iPayment_ID" Type="int" Nullable="false" />
+          <Property Name="iCustomer_ID" Type="int" />
+          <Property Name="iStaff_ID" Type="int" />
+          <Property Name="iAmount" Type="int" Nullable="false" />
+          <Property Name="dPayment_Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rental">
+          <Key>
+            <PropertyRef Name="iRental_ID" />
+          </Key>
+          <Property Name="iRental_ID" Type="int" Nullable="false" />
+          <Property Name="dRental_Date" Type="date" Nullable="false" />
+          <Property Name="iInventory_ID" Type="int" />
+          <Property Name="iCustomer_ID" Type="int" />
+          <Property Name="dReturn_Date" Type="date" Nullable="false" />
+          <Property Name="iStaff_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="iStaff_ID" />
+          </Key>
+          <Property Name="iStaff_ID" Type="int" Nullable="false" />
+          <Property Name="vFirstName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="vLastName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="vEMail" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="iAddress_ID" Type="int" />
+          <Property Name="iStore_ID" Type="int" />
+          <Property Name="tActive_ID" Type="tinyint" />
+          <Property Name="vUsername" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="vPassword" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="iStore_ID" />
+          </Key>
+          <Property Name="iStore_ID" Type="int" Nullable="false" />
+          <Property Name="iAddress_ID" Type="int" />
+        </EntityType>
+        <Association Name="FK__Address__iCity_I__30F848ED">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Address" Type="Self.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="iCity_ID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="iCity_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__City__iCountry_I__2E1BDC42">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="iCountry_ID" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="iCountry_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__iAddre__37A5467C">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="iAddress_ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="iAddress_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__iStore__36B12243">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="iStore_ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="iStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__tActiv__38996AB5">
+          <End Role="Active" Type="Self.Active" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active">
+              <PropertyRef Name="tActive_ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="tActive_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Film__iLanguage___403A8C7D">
+          <End Role="Language" Type="Self.Language" Multiplicity="0..1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="iLanguage_ID" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="iLanguage_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inventory__iFilm__49C3F6B7">
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="iFilm_ID" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="iFilm_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inventory__iStor__4AB81AF0">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="iStore_ID" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="iStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__iCustom__52593CB8">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="iCustomer_ID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="iCustomer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__iStaff___534D60F1">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="iStaff_ID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="iStaff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rental__iCustome__4E88ABD4">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="iCustomer_ID" />
+            </Principal>
+            <Dependent Role="Rental">
+              <PropertyRef Name="iCustomer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rental__iInvento__4D94879B">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="iInventory_ID" />
+            </Principal>
+            <Dependent Role="Rental">
+              <PropertyRef Name="iInventory_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rental__iStaff_I__4F7CD00D">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="iStaff_ID" />
+            </Principal>
+            <Dependent Role="Rental">
+              <PropertyRef Name="iStaff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__iAddress___3B75D760">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="iAddress_ID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="iAddress_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__iStore_ID__3C69FB99">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="iStore_ID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="iStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__tActive_I__3D5E1FD2">
+          <End Role="Active" Type="Self.Active" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active">
+              <PropertyRef Name="tActive_ID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="tActive_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Store__iAddress___33D4B598">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="iAddress_ID" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="iAddress_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PIA_O_F_R2ModelStoreContainer">
+          <EntitySet Name="Active" EntityType="Self.Active" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Actor" EntityType="Self.Actor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rental" EntityType="Self.Rental" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Address__iCity_I__30F848ED" Association="Self.FK__Address__iCity_I__30F848ED">
+            <End Role="City" EntitySet="City" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK__City__iCountry_I__2E1BDC42" Association="Self.FK__City__iCountry_I__2E1BDC42">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__iAddre__37A5467C" Association="Self.FK__Customer__iAddre__37A5467C">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__iStore__36B12243" Association="Self.FK__Customer__iStore__36B12243">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__tActiv__38996AB5" Association="Self.FK__Customer__tActiv__38996AB5">
+            <End Role="Active" EntitySet="Active" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Film__iLanguage___403A8C7D" Association="Self.FK__Film__iLanguage___403A8C7D">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inventory__iFilm__49C3F6B7" Association="Self.FK__Inventory__iFilm__49C3F6B7">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Inventory" EntitySet="Inventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inventory__iStor__4AB81AF0" Association="Self.FK__Inventory__iStor__4AB81AF0">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Inventory" EntitySet="Inventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__iCustom__52593CB8" Association="Self.FK__Payment__iCustom__52593CB8">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__iStaff___534D60F1" Association="Self.FK__Payment__iStaff___534D60F1">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rental__iCustome__4E88ABD4" Association="Self.FK__Rental__iCustome__4E88ABD4">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Rental" EntitySet="Rental" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rental__iInvento__4D94879B" Association="Self.FK__Rental__iInvento__4D94879B">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Rental" EntitySet="Rental" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rental__iStaff_I__4F7CD00D" Association="Self.FK__Rental__iStaff_I__4F7CD00D">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Rental" EntitySet="Rental" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__iAddress___3B75D760" Association="Self.FK__Staff__iAddress___3B75D760">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__iStore_ID__3C69FB99" Association="Self.FK__Staff__iStore_ID__3C69FB99">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__tActive_I__3D5E1FD2" Association="Self.FK__Staff__tActive_I__3D5E1FD2">
+            <End Role="Active" EntitySet="Active" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Store__iAddress___33D4B598" Association="Self.FK__Store__iAddress___33D4B598">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PIA_O_F_R2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Active">
+          <Key>
+            <PropertyRef Name="tActive_ID" />
+          </Key>
+          <Property Name="tActive_ID" Type="Byte" Nullable="false" />
+          <Property Name="vActive" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Customer__tActiv__38996AB5" FromRole="Active" ToRole="Customer" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__tActive_I__3D5E1FD2" FromRole="Active" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Actor">
+          <Key>
+            <PropertyRef Name="iActor_ID" />
+          </Key>
+          <Property Name="iActor_ID" Type="Int32" Nullable="false" />
+          <Property Name="vFirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vLastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="iAddress_ID" />
+          </Key>
+          <Property Name="iAddress_ID" Type="Int32" Nullable="false" />
+          <Property Name="vAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vMunicipality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="iCity_ID" Type="Int32" />
+          <Property Name="iPostal_Code" Type="Int32" Nullable="false" />
+          <Property Name="bTelephone" Type="Int64" />
+          <NavigationProperty Name="City" Relationship="Self.FK__Address__iCity_I__30F848ED" FromRole="Address" ToRole="City" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Customer__iAddre__37A5467C" FromRole="Address" ToRole="Customer" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__iAddress___3B75D760" FromRole="Address" ToRole="Staff" />
+          <NavigationProperty Name="Stores" Relationship="Self.FK__Store__iAddress___33D4B598" FromRole="Address" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="iCategory_ID" />
+          </Key>
+          <Property Name="iCategory_ID" Type="Int32" Nullable="false" />
+          <Property Name="vName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="iCity_ID" />
+          </Key>
+          <Property Name="iCity_ID" Type="Int32" Nullable="false" />
+          <Property Name="vCity" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="iCountry_ID" Type="Int32" />
+          <NavigationProperty Name="Addresses" Relationship="Self.FK__Address__iCity_I__30F848ED" FromRole="City" ToRole="Address" />
+          <NavigationProperty Name="Country" Relationship="Self.FK__City__iCountry_I__2E1BDC42" FromRole="City" ToRole="Country" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="iCountry_ID" />
+          </Key>
+          <Property Name="iCountry_ID" Type="Int32" Nullable="false" />
+          <Property Name="vCountry" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cities" Relationship="Self.FK__City__iCountry_I__2E1BDC42" FromRole="Country" ToRole="City" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="iCustomer_ID" />
+          </Key>
+          <Property Name="iCustomer_ID" Type="Int32" Nullable="false" />
+          <Property Name="iStore_ID" Type="Int32" />
+          <Property Name="vFirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vLastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vEMail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="iAddress_ID" Type="Int32" />
+          <Property Name="iCreation_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="tActive_ID" Type="Byte" />
+          <NavigationProperty Name="Active" Relationship="Self.FK__Customer__tActiv__38996AB5" FromRole="Customer" ToRole="Active" />
+          <NavigationProperty Name="Address" Relationship="Self.FK__Customer__iAddre__37A5467C" FromRole="Customer" ToRole="Address" />
+          <NavigationProperty Name="Store" Relationship="Self.FK__Customer__iStore__36B12243" FromRole="Customer" ToRole="Store" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__iCustom__52593CB8" FromRole="Customer" ToRole="Payment" />
+          <NavigationProperty Name="Rentals" Relationship="Self.FK__Rental__iCustome__4E88ABD4" FromRole="Customer" ToRole="Rental" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="iFilm_ID" />
+          </Key>
+          <Property Name="iFilm_ID" Type="Int32" Nullable="false" />
+          <Property Name="vTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sRelease_Year" Type="Int16" Nullable="false" />
+          <Property Name="iLanguage_ID" Type="Int32" />
+          <Property Name="tRental_Duration_Days" Type="Byte" />
+          <Property Name="sLength_In_Minutes" Type="Int16" Nullable="false" />
+          <Property Name="sReplacement_Cost" Type="Int16" Nullable="false" />
+          <Property Name="tRating" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="Self.FK__Film__iLanguage___403A8C7D" FromRole="Film" ToRole="Language" />
+          <NavigationProperty Name="Inventories" Relationship="Self.FK__Inventory__iFilm__49C3F6B7" FromRole="Film" ToRole="Inventory" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="iInventory_ID" />
+          </Key>
+          <Property Name="iInventory_ID" Type="Int32" Nullable="false" />
+          <Property Name="iFilm_ID" Type="Int32" />
+          <Property Name="iStore_ID" Type="Int32" />
+          <Property Name="sQuantity" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Film" Relationship="Self.FK__Inventory__iFilm__49C3F6B7" FromRole="Inventory" ToRole="Film" />
+          <NavigationProperty Name="Store" Relationship="Self.FK__Inventory__iStor__4AB81AF0" FromRole="Inventory" ToRole="Store" />
+          <NavigationProperty Name="Rentals" Relationship="Self.FK__Rental__iInvento__4D94879B" FromRole="Inventory" ToRole="Rental" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="iLanguage_ID" />
+          </Key>
+          <Property Name="iLanguage_ID" Type="Int32" Nullable="false" />
+          <Property Name="vName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Films" Relationship="Self.FK__Film__iLanguage___403A8C7D" FromRole="Language" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="iPayment_ID" />
+          </Key>
+          <Property Name="iPayment_ID" Type="Int32" Nullable="false" />
+          <Property Name="iCustomer_ID" Type="Int32" />
+          <Property Name="iStaff_ID" Type="Int32" />
+          <Property Name="iAmount" Type="Int32" Nullable="false" />
+          <Property Name="dPayment_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Payment__iCustom__52593CB8" FromRole="Payment" ToRole="Customer" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__Payment__iStaff___534D60F1" FromRole="Payment" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Rental">
+          <Key>
+            <PropertyRef Name="iRental_ID" />
+          </Key>
+          <Property Name="iRental_ID" Type="Int32" Nullable="false" />
+          <Property Name="dRental_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="iInventory_ID" Type="Int32" />
+          <Property Name="iCustomer_ID" Type="Int32" />
+          <Property Name="dReturn_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="iStaff_ID" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Rental__iCustome__4E88ABD4" FromRole="Rental" ToRole="Customer" />
+          <NavigationProperty Name="Inventory" Relationship="Self.FK__Rental__iInvento__4D94879B" FromRole="Rental" ToRole="Inventory" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__Rental__iStaff_I__4F7CD00D" FromRole="Rental" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="iStaff_ID" />
+          </Key>
+          <Property Name="iStaff_ID" Type="Int32" Nullable="false" />
+          <Property Name="vFirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vLastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vEMail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="iAddress_ID" Type="Int32" />
+          <Property Name="iStore_ID" Type="Int32" />
+          <Property Name="tActive_ID" Type="Byte" />
+          <Property Name="vUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Active" Relationship="Self.FK__Staff__tActive_I__3D5E1FD2" FromRole="Staff" ToRole="Active" />
+          <NavigationProperty Name="Address" Relationship="Self.FK__Staff__iAddress___3B75D760" FromRole="Staff" ToRole="Address" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__iStaff___534D60F1" FromRole="Staff" ToRole="Payment" />
+          <NavigationProperty Name="Rentals" Relationship="Self.FK__Rental__iStaff_I__4F7CD00D" FromRole="Staff" ToRole="Rental" />
+          <NavigationProperty Name="Store" Relationship="Self.FK__Staff__iStore_ID__3C69FB99" FromRole="Staff" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="iStore_ID" />
+          </Key>
+          <Property Name="iStore_ID" Type="Int32" Nullable="false" />
+          <Property Name="iAddress_ID" Type="Int32" />
+          <NavigationProperty Name="Address" Relationship="Self.FK__Store__iAddress___33D4B598" FromRole="Store" ToRole="Address" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Customer__iStore__36B12243" FromRole="Store" ToRole="Customer" />
+          <NavigationProperty Name="Inventories" Relationship="Self.FK__Inventory__iStor__4AB81AF0" FromRole="Store" ToRole="Inventory" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__iStore_ID__3C69FB99" FromRole="Store" ToRole="Staff" />
+        </EntityType>
+        <Association Name="FK__Customer__tActiv__38996AB5">
+          <End Role="Active" Type="Self.Active" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active">
+              <PropertyRef Name="tActive_ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="tActive_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__tActive_I__3D5E1FD2">
+          <End Role="Active" Type="Self.Active" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active">
+              <PropertyRef Name="tActive_ID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="tActive_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Address__iCity_I__30F848ED">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Address" Type="Self.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="iCity_ID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="iCity_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__iAddre__37A5467C">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="iAddress_ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="iAddress_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__iAddress___3B75D760">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="iAddress_ID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="iAddress_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Store__iAddress___33D4B598">
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="iAddress_ID" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="iAddress_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__City__iCountry_I__2E1BDC42">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="iCountry_ID" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="iCountry_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__iStore__36B12243">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="iStore_ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="iStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__iCustom__52593CB8">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="iCustomer_ID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="iCustomer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rental__iCustome__4E88ABD4">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="iCustomer_ID" />
+            </Principal>
+            <Dependent Role="Rental">
+              <PropertyRef Name="iCustomer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Film__iLanguage___403A8C7D">
+          <End Role="Language" Type="Self.Language" Multiplicity="0..1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="iLanguage_ID" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="iLanguage_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inventory__iFilm__49C3F6B7">
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="iFilm_ID" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="iFilm_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inventory__iStor__4AB81AF0">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="iStore_ID" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="iStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rental__iInvento__4D94879B">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="iInventory_ID" />
+            </Principal>
+            <Dependent Role="Rental">
+              <PropertyRef Name="iInventory_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__iStaff___534D60F1">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="iStaff_ID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="iStaff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rental__iStaff_I__4F7CD00D">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="iStaff_ID" />
+            </Principal>
+            <Dependent Role="Rental">
+              <PropertyRef Name="iStaff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__iStore_ID__3C69FB99">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="iStore_ID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="iStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PIA_O_F_R2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actives" EntityType="Self.Active" />
+          <EntitySet Name="Actors" EntityType="Self.Actor" />
+          <EntitySet Name="Addresses" EntityType="Self.Address" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Films" EntityType="Self.Film" />
+          <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+          <EntitySet Name="Languages" EntityType="Self.Language" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="Rentals" EntityType="Self.Rental" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <AssociationSet Name="FK__Customer__tActiv__38996AB5" Association="Self.FK__Customer__tActiv__38996AB5">
+            <End Role="Active" EntitySet="Actives" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__tActive_I__3D5E1FD2" Association="Self.FK__Staff__tActive_I__3D5E1FD2">
+            <End Role="Active" EntitySet="Actives" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Address__iCity_I__30F848ED" Association="Self.FK__Address__iCity_I__30F848ED">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__iAddre__37A5467C" Association="Self.FK__Customer__iAddre__37A5467C">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__iAddress___3B75D760" Association="Self.FK__Staff__iAddress___3B75D760">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Store__iAddress___33D4B598" Association="Self.FK__Store__iAddress___33D4B598">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__City__iCountry_I__2E1BDC42" Association="Self.FK__City__iCountry_I__2E1BDC42">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__iStore__36B12243" Association="Self.FK__Customer__iStore__36B12243">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__iCustom__52593CB8" Association="Self.FK__Payment__iCustom__52593CB8">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rental__iCustome__4E88ABD4" Association="Self.FK__Rental__iCustome__4E88ABD4">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Rental" EntitySet="Rentals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Film__iLanguage___403A8C7D" Association="Self.FK__Film__iLanguage___403A8C7D">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Film" EntitySet="Films" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inventory__iFilm__49C3F6B7" Association="Self.FK__Inventory__iFilm__49C3F6B7">
+            <End Role="Film" EntitySet="Films" />
+            <End Role="Inventory" EntitySet="Inventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inventory__iStor__4AB81AF0" Association="Self.FK__Inventory__iStor__4AB81AF0">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Inventory" EntitySet="Inventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rental__iInvento__4D94879B" Association="Self.FK__Rental__iInvento__4D94879B">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Rental" EntitySet="Rentals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__iStaff___534D60F1" Association="Self.FK__Payment__iStaff___534D60F1">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rental__iStaff_I__4F7CD00D" Association="Self.FK__Rental__iStaff_I__4F7CD00D">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Rental" EntitySet="Rentals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__iStore_ID__3C69FB99" Association="Self.FK__Staff__iStore_ID__3C69FB99">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PIA_O_F_R2ModelStoreContainer" CdmEntityContainer="PIA_O_F_R2Entities">
+          <EntitySetMapping Name="Actives">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Active">
+              <MappingFragment StoreEntitySet="Active">
+                <ScalarProperty Name="tActive_ID" ColumnName="tActive_ID" />
+                <ScalarProperty Name="vActive" ColumnName="vActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Actors">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Actor">
+              <MappingFragment StoreEntitySet="Actor">
+                <ScalarProperty Name="iActor_ID" ColumnName="iActor_ID" />
+                <ScalarProperty Name="vFirstName" ColumnName="vFirstName" />
+                <ScalarProperty Name="vLastName" ColumnName="vLastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="iAddress_ID" ColumnName="iAddress_ID" />
+                <ScalarProperty Name="vAddress" ColumnName="vAddress" />
+                <ScalarProperty Name="vMunicipality" ColumnName="vMunicipality" />
+                <ScalarProperty Name="iCity_ID" ColumnName="iCity_ID" />
+                <ScalarProperty Name="iPostal_Code" ColumnName="iPostal_Code" />
+                <ScalarProperty Name="bTelephone" ColumnName="bTelephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="iCategory_ID" ColumnName="iCategory_ID" />
+                <ScalarProperty Name="vName" ColumnName="vName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="iCity_ID" ColumnName="iCity_ID" />
+                <ScalarProperty Name="vCity" ColumnName="vCity" />
+                <ScalarProperty Name="iCountry_ID" ColumnName="iCountry_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="iCountry_ID" ColumnName="iCountry_ID" />
+                <ScalarProperty Name="vCountry" ColumnName="vCountry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="iCustomer_ID" ColumnName="iCustomer_ID" />
+                <ScalarProperty Name="iStore_ID" ColumnName="iStore_ID" />
+                <ScalarProperty Name="vFirstName" ColumnName="vFirstName" />
+                <ScalarProperty Name="vLastName" ColumnName="vLastName" />
+                <ScalarProperty Name="vEMail" ColumnName="vEMail" />
+                <ScalarProperty Name="iAddress_ID" ColumnName="iAddress_ID" />
+                <ScalarProperty Name="iCreation_Date" ColumnName="iCreation_Date" />
+                <ScalarProperty Name="tActive_ID" ColumnName="tActive_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Films">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Film">
+              <MappingFragment StoreEntitySet="Film">
+                <ScalarProperty Name="iFilm_ID" ColumnName="iFilm_ID" />
+                <ScalarProperty Name="vTitle" ColumnName="vTitle" />
+                <ScalarProperty Name="sRelease_Year" ColumnName="sRelease_Year" />
+                <ScalarProperty Name="iLanguage_ID" ColumnName="iLanguage_ID" />
+                <ScalarProperty Name="tRental_Duration_Days" ColumnName="tRental_Duration_Days" />
+                <ScalarProperty Name="sLength_In_Minutes" ColumnName="sLength_In_Minutes" />
+                <ScalarProperty Name="sReplacement_Cost" ColumnName="sReplacement_Cost" />
+                <ScalarProperty Name="tRating" ColumnName="tRating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventories">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Inventory">
+              <MappingFragment StoreEntitySet="Inventory">
+                <ScalarProperty Name="iInventory_ID" ColumnName="iInventory_ID" />
+                <ScalarProperty Name="iFilm_ID" ColumnName="iFilm_ID" />
+                <ScalarProperty Name="iStore_ID" ColumnName="iStore_ID" />
+                <ScalarProperty Name="sQuantity" ColumnName="sQuantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Language">
+              <MappingFragment StoreEntitySet="Language">
+                <ScalarProperty Name="iLanguage_ID" ColumnName="iLanguage_ID" />
+                <ScalarProperty Name="vName" ColumnName="vName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="iPayment_ID" ColumnName="iPayment_ID" />
+                <ScalarProperty Name="iCustomer_ID" ColumnName="iCustomer_ID" />
+                <ScalarProperty Name="iStaff_ID" ColumnName="iStaff_ID" />
+                <ScalarProperty Name="iAmount" ColumnName="iAmount" />
+                <ScalarProperty Name="dPayment_Date" ColumnName="dPayment_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rentals">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Rental">
+              <MappingFragment StoreEntitySet="Rental">
+                <ScalarProperty Name="iRental_ID" ColumnName="iRental_ID" />
+                <ScalarProperty Name="dRental_Date" ColumnName="dRental_Date" />
+                <ScalarProperty Name="iInventory_ID" ColumnName="iInventory_ID" />
+                <ScalarProperty Name="iCustomer_ID" ColumnName="iCustomer_ID" />
+                <ScalarProperty Name="dReturn_Date" ColumnName="dReturn_Date" />
+                <ScalarProperty Name="iStaff_ID" ColumnName="iStaff_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="iStaff_ID" ColumnName="iStaff_ID" />
+                <ScalarProperty Name="vFirstName" ColumnName="vFirstName" />
+                <ScalarProperty Name="vLastName" ColumnName="vLastName" />
+                <ScalarProperty Name="vEMail" ColumnName="vEMail" />
+                <ScalarProperty Name="iAddress_ID" ColumnName="iAddress_ID" />
+                <ScalarProperty Name="iStore_ID" ColumnName="iStore_ID" />
+                <ScalarProperty Name="tActive_ID" ColumnName="tActive_ID" />
+                <ScalarProperty Name="vUsername" ColumnName="vUsername" />
+                <ScalarProperty Name="vPassword" ColumnName="vPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="PIA_O_F_R2Model.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="iStore_ID" ColumnName="iStore_ID" />
+                <ScalarProperty Name="iAddress_ID" ColumnName="iAddress_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

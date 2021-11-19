@@ -1,0 +1,48 @@
+﻿@model PIA_PRUEBA.Models.Inventory
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro que quieres eliminar este registro del inventario?</h3>
+<div>
+    <h4>Registro  @Html.DisplayFor(model => model.iInventory_ID)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Film.vTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Film.vTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Store.iStore_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Store.iStore_ID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

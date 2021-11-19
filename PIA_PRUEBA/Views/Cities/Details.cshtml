@@ -1,0 +1,34 @@
+﻿@model PIA_PRUEBA.Models.City
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>City</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.vCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.vCountry)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.iCity_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
